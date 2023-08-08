@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body
+    class="text-xl max-md:text-base bg-zinc-950 font-semibold text-zinc-300 flex justify-center items-center min-h-screen"
+  >
+    <div id="app" class="max-w-xl p-4">
+      <h1 class="text-2xl text-center text-zinc-500 max-md:text-xl">
+        Passwort Generator
+      </h1>
+      <div class="bg-zinc-800 flex gap-4 px-8 py-5 mt-6 max-md:p-4 max-md:mt-4">
+        <input
+          id="password"
+          class="w-full bg-transparent text-[2rem] max-md:text-2xl"
+          type="text"
+          placeholder="P4$5W0rD!"
+          readonly
+        />
+        <button class="p-2" id="copy">
+          <span class="text-green-300 hover:text-zinc-200">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <form>
+        <div class="mt-5 bg-zinc-800 p-8 max-md:p-4 max-md:mt-3">
+          <label class="flex flex-wrap">
+            <p class="grow">Character Length</p>
+            <span
+              id="counter"
+              class="text-4xl max-md:text-3xl leading-6 text-green-300"
+              >0</span
+            >
+            <input
+              type="range"
+              name="len"
+              class="w-full my-7 accent-green-300"
+              min="4"
+              max="16"
+              step="1"
+            />
+          </label>
+          <div class="flex flex-col gap-4 mt-2 max-md:gap-2">
+            <label>
+              <input
+                name="upper"
+                type="checkbox"
+                class="w-5 h-5 accent-green-300"
+                checked
+              />
+              <span class="ml-4 max-md:ml-2"> Include Uppercase Letters </span>
+            </label>
+            <label>
+              <input
+                name="lower"
+                type="checkbox"
+                class="w-5 h-5 accent-green-300"
+                checked
+              />
+              <span class="ml-4 max-md:ml-2"> Include Lowercase Letters </span>
+            </label>
+            <label>
+              <input
+                name="num"
+                type="checkbox"
+                class="w-5 h-5 accent-green-300"
+              />
+              <span class="ml-4 max-md:ml-2"> Include Numbers </span>
+            </label>
+            <label>
+              <input
+                name="sym"
+                type="checkbox"
+                class="w-5 h-5 accent-green-300"
+              />
+              <span class="ml-4 max-md:ml-2"> Include Symbols </span>
+            </label>
+          </div>
+          <div
+            class="bg-zinc-900 my-7 px-8 py-6 flex max-md:p-4 max-md:my-4 max-md:text-sm"
+          >
+            <p class="uppercase grow text-zinc-500">strength</p>
+            <p id="strength-text" class="uppercase font-bold mr-2"></p>
+            <div class="flex h-7 gap-1.5" id="strength">
+              <input
+                disabled
+                type="checkbox"
+                class="border-2 w-3 appearance-none checked:bg-current"
+              />
+              <input
+                disabled
+                type="checkbox"
+                class="border-2 w-3 appearance-none checked:bg-current"
+              />
+              <input
+                disabled
+                type="checkbox"
+                class="border-2 w-3 appearance-none checked:bg-current"
+              />
+              <input
+                disabled
+                type="checkbox"
+                class="border-2 w-3 appearance-none checked:bg-current"
+              />
+            </div>
+          </div>
+          <button
+            class="w-full py-5 bg-green-300 text-black border-4 border-green-300 hover:bg-transparent hover:text-green-300 hover:border-green-300 rounded-sm"
+          >
+            <span class="uppercase text-lg max-md:text-base mr-4 tracking-wide">
+              generate
+            </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="w-5 h-5 inline-block"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
