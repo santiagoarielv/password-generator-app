@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <meta
+      name="description"
+      content="A simple password generator made with vanilla javascript"
+    />
+    <title>Passwort Generator</title>
   </head>
   <body
-    class="text-xl max-md:text-base bg-zinc-950 font-semibold text-zinc-300 flex justify-center items-center min-h-screen"
+    class="text-xl max-md:text-base bg-black font-semibold text-zinc-300 flex justify-center items-center min-h-screen"
   >
     <div class="max-w-xl p-4">
-      <h1 class="text-2xl text-center text-zinc-500 max-md:text-xl">
+      <h1 class="text-2xl text-center text-zinc-400 max-md:text-xl">
         Passwort Generator
       </h1>
       <div class="bg-zinc-800 flex gap-4 px-8 py-5 mt-6 max-md:p-4 max-md:mt-4">
@@ -21,7 +25,7 @@
           placeholder="P4$5W0rD!"
           readonly
         />
-        <button class="p-2" id="copy">
+        <button class="p-2" id="copy" aria-label="Copy to clipboard">
           <span class="text-green-300 hover:text-zinc-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -97,29 +101,13 @@
           <div
             class="bg-zinc-900 my-7 px-8 py-6 flex max-md:p-4 max-md:my-4 max-md:text-sm"
           >
-            <p class="uppercase grow text-zinc-500">strength</p>
+            <p class="uppercase grow text-zinc-400">strength</p>
             <p id="strength-text" class="uppercase font-bold mr-2"></p>
             <div class="flex h-7 gap-1.5" id="strength">
-              <input
-                disabled
-                type="checkbox"
-                class="border-2 w-3 appearance-none checked:bg-current"
-              />
-              <input
-                disabled
-                type="checkbox"
-                class="border-2 w-3 appearance-none checked:bg-current"
-              />
-              <input
-                disabled
-                type="checkbox"
-                class="border-2 w-3 appearance-none checked:bg-current"
-              />
-              <input
-                disabled
-                type="checkbox"
-                class="border-2 w-3 appearance-none checked:bg-current"
-              />
+              <label class="border-2 w-3 aria-checked:bg-current"></label>
+              <label class="border-2 w-3 aria-checked:bg-current"></label>
+              <label class="border-2 w-3 aria-checked:bg-current"></label>
+              <label class="border-2 w-3 aria-checked:bg-current"></label>
             </div>
           </div>
           <button

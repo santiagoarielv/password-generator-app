@@ -105,8 +105,8 @@ function onSubmit(event: Event): void {
     indicatorText.innerHTML = strengthText;
 
     for (let i = 0; i < indicatorWrapper.children.length; i++) {
-      const child = indicatorWrapper.children[i] as HTMLInputElement;
-      child.checked = i < level;
+      const child = indicatorWrapper.children[i] as HTMLLabelElement;
+      child.ariaChecked = i < level ? "true" : null;
     }
   }
 }
